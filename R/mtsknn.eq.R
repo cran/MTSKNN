@@ -9,9 +9,10 @@ mtsknn.eq = function(x,y,k,clevel=0.05)
   y <- as.matrix(y)
   if(ncol(x)!=ncol(y))return("The dimensions of two samples must match!!!")
 
-  d <- ncol(x)-1
+  d <- ncol(x)
   n1 <- nrow(x)
   n2 <- nrow(y)
+
   
   b <- log(1/(1-clevel))
   
@@ -23,22 +24,22 @@ mtsknn.eq = function(x,y,k,clevel=0.05)
      n2 <- nrow(y)
   }
   
-
-      q <- as.integer(n2/n1)
-      m <- as.integer(n2/q)
-      r <- n2-m*q
-      starts <- seq(1,(q*m+1),by=m)
-      if(r>0)starts <- c(starts[1:(q-r+1)],(starts[(q-r+2):(q+1)]+seq(1,r,by=1)))
+  
+  q <- as.integer(n2/n1)
+  m <- as.integer(n2/q)
+  r <- n2-m*q
+  starts <- seq(1,(q*m+1),by=m)
+  if(r>0)starts <- c(starts[1:(q-r+1)],(starts[(q-r+2):(q+1)]+seq(1,r,by=1)))
       
-      adjust.cl <- b/q
+  adjust.cl <- b/q
       
-      y.permuted <- y[sample(c(1:n2)),]
+  y.permuted <- as.matrix(y[sample(c(1:n2)),])
       
-      x <- cbind(x,rep(1,n1))
+  x <- cbind(x,rep(1,n1))
       
-      K <- 0
-      for(i in 1:q){
-         y.sub <- y.permuted[starts[i]:(starts[i+1]-1),]
+  K <- 0
+  for(i in 1:q){
+         y.sub <- as.matrix(y.permuted[starts[i]:(starts[i+1]-1),])
          n2.sub <- nrow(y.sub)
          y.sub <- cbind(y.sub,rep(2,n2.sub))
          Set <- rbind(x,y.sub)

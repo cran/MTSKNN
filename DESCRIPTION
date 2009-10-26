@@ -1,5 +1,5 @@
 Package: MTSKNN
-Version: 0.0-1
+Version: 0.0-2
 Date: 2009-10-26
 Title: Multivariate two-sample tests based on K-nearest-neighbors
 Author: Peng Dai <peng.dai@stonybrook.edu> and Wei Dou
@@ -12,6 +12,6 @@ Description: The package contains three multivariate two-sample tests
         procedures are distribution free and are robust from balanced
         designs to unbalanced designs.
 License: GPL (>= 2)
-Packaged: Tue Oct 27 03:49:55 2009; wd72
+Packaged: Mon Nov 2 00:29:23 2009; wd72
 Repository: CRAN
-Date/Publication: 2009-10-27 19:17:26
+Date/Publication: 2009-11-02 07:46:20

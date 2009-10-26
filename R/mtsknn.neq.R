@@ -9,7 +9,7 @@ mtsknn.neq = function(x,y,k,clevel=0.05)
   y <- as.matrix(y)
   if(ncol(x)!=ncol(y))return("The dimensions of two samples must match!!!")
 
-  d <- ncol(x)-1
+  d <- ncol(x)
   n1 <- nrow(x)
   n2 <- nrow(y)
   
@@ -34,7 +34,7 @@ mtsknn.neq = function(x,y,k,clevel=0.05)
 
       adjust.cl <- b/p
 
-      y.permuted <- y[sample(c(1:n2)),]
+      y.permuted <- as.matrix(y[sample(c(1:n2)),])
 
       K <- 0
       y.temp <- NULL
@@ -43,7 +43,7 @@ mtsknn.neq = function(x,y,k,clevel=0.05)
          n1.sub <- nrow(x.sub)
          x.sub <- cbind(x,rep(1,n1))
          
-         y.sub <- y.permuted[starts[2^(i-1)]:(starts[2^(i)]-1),]
+         y.sub <- as.matrix(y.permuted[starts[2^(i-1)]:(starts[2^(i)]-1),])
          y.temp <- rbind(y.temp, y.sub)
          n2.sub <- nrow(y.sub)
          y.sub <- cbind(y.sub,rep(2,n2.sub))

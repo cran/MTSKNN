@@ -10,7 +10,7 @@ mtsknn(x,y,k)
 \arguments{
   \item{x}{A matrix or data frame.}
   \item{y}{A matrix or data frame.}
-  \item{k}{A integer.}
+  \item{k}{An integer.}
 }
 \details{
 matrices or data frames x and y are the two samples to be tested. Each row consists of the coordinates of a data point. The integer k is the number of nearest neighbors to choose in the testing procedure. 
@@ -31,10 +31,10 @@ Ann. Statist.}, 16 772-783.
 This is appropriate for the balanced case where the two sample sizes are about the same level. For the unbalanced case where the two sample sizes deviate largely from each other, two more robust tests \emph{mtsknn.eq} and \emph{mtsknn.neq} are recommended. 
 }
 \author{
-Peng Dai and Wei Dou
+Peng Dai \email{peng.dai@stonybrook.edu} and Wei Dou
 \email{wei.dou@yale.edu}
 }
-\seealso{}
+\seealso{\code{\link{mtsknn.eq}} and \code{\link{mtsknn.neq}}} 
 
 
 \examples{
@@ -43,9 +43,9 @@ Peng Dai and Wei Dou
 
 n <- 100
 
-x <- matrix(rt(2*n, df=5),2,2)
+x <- matrix(rt(2*n, df=5),n,2)
 
-y <- matrix(rt(2*n, df=5),2,2)
+y <- matrix(rt(2*n, df=5),n,2)
 
 mtsknn(x,y,3)
 
@@ -53,9 +53,9 @@ mtsknn(x,y,3)
 
 n <- 100
 
-x <- matrix(rt(2*n, df=10),2,2)
+x <- matrix(rt(2*n, df=10),n,2)
 
-y <- matrix(rnorm(2*n),2,2)
+y <- matrix(rnorm(2*n),n,2)
 
 
 mtsknn(x,y,3)

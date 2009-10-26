@@ -2,12 +2,16 @@
 #include <Rdefines.h>      //specific R library
 #include <Rmath.h>
 
+#include <Rinternals.h>
+#include <R_ext/Rdynload.h>
+#include <R_ext/Applic.h>
+
 #include <queue>
 //#include <vector>
 //#include <fstream>
 //#include <algorithm>
 //#include <math.h>
-//#include <iostream>
+//#include <iostream>b
 //#include <time.h>
 //#define n 10000
 //#define n1 5000

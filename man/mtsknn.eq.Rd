@@ -10,7 +10,7 @@ mtsknn.eq(x,y,k,clevel)
 \arguments{
   \item{x}{A matrix or data frame.}
   \item{y}{A matrix or data frame.}
-  \item{k}{A integer.}
+  \item{k}{An integer.}
   \item{clevel}{The confidence level. Default value is 0.05.}
 }
 \details{
@@ -32,10 +32,10 @@ Ann. Statist.}, 16 772-783.
 This is appropriate for the unbalanced case where the two sample sizes are about the same level. Another robust test is\emph{mtsknn.neq}. 
 }
 \author{
-Peng Dai and Wei Dou
+Peng Dai\email{peng.dai@yale.edu} and Wei Dou
 \email{wei.dou@yale.edu}
 }
-\seealso{}
+\seealso{\code{\link{mtsknn}} and \code{\link{mtsknn.neq}}}
 
 
 \examples{

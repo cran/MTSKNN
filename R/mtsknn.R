@@ -9,7 +9,7 @@ mtsknn = function(x,y,k)
   y <- as.matrix(y)
   if(ncol(x)!=ncol(y))return("The dimensions of two samples must match!!!")
 
-  d <- ncol(x)-1
+  d <- ncol(x)
   n1 <- nrow(x)
   n2 <- nrow(y)
   n <- n1+n2
