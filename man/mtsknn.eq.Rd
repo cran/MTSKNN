@@ -5,19 +5,21 @@
 The function tests whether two samples share the same underlying distribution based on k-nearest-neighbors approach. This approach is robust in the unbalanced case. 
 }
 \usage{
-mtsknn.eq(x,y,k,clevel)
+mtsknn.eq(x,y,k,clevel=0.05,getpval=TRUE, print=TRUE)
 }
 \arguments{
   \item{x}{A matrix or data frame.}
   \item{y}{A matrix or data frame.}
   \item{k}{An integer.}
   \item{clevel}{The confidence level. Default value is 0.05.}
+  \item{getpval}{Logic value. If it is set to be TRUE the p value of test will be calcuated and reported; if it is set to be false the p value will not be calculated.}
+  \item{print}{Logic value. If it is set to be TRUE the test result will be reported; if it is set to be false the test result will not be reported.}
 }
 \details{
 matrices or data frames x and y are the two samples to be tested. Each row consists of the coordinates of a data point. The integer k is the number of nearest neighbors to choose in the testing procedure. 
  }
 \value{
-The test result for a given confidence level. Reject or accept the null hypothesis. 
+The test result for a given confidence level. Reject or accept the null hypothesis. It can also calculate and report the p value. 
 }
 \references{
    Schilling, M. F. (1986). Multivariate two-sample tests based on nearest neighbors. \emph{J. Amer. Statist.
@@ -31,11 +33,11 @@ Ann. Statist.}, 16 772-783.
 \note{
 This is appropriate for the unbalanced case where the two sample sizes are about the same level. Another robust test is\emph{mtsknn.neq}. 
 }
-\author{
+\author{Lisha Chen\email{lisha.chen@yale.edu}, 
 Peng Dai\email{peng.dai@yale.edu} and Wei Dou
 \email{wei.dou@yale.edu}
 }
-\seealso{\code{\link{mtsknn}} and \code{\link{mtsknn.neq}}}
+\seealso{\code{\link{mtsknn}}, \code{\link{mtsknn.neq}} and \code{\link{mtsknn.discard}}}
 
 
 \examples{
