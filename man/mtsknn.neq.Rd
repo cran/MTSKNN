@@ -46,7 +46,7 @@ Peng Dai\email{peng.dai@yale.edu} and Wei Dou
 \seealso{
 
 \code{\link{mtsknn}},
-\code{\link{mtsknn.eq} and \code{\link{mtsknn.discard}}}
+\code{\link{mtsknn.eq}} and \code{\link{mtsknn.discard}}
 
 }
 
